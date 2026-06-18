@@ -1,133 +1,100 @@
-#  Book Store - Library Management System
+<div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=150&section=header&text=%20Book%20Store&fontSize=38&fontColor=fff&animation=fadeIn&fontAlignY=40&desc=Library%20Management%20System&descAlignY=62&descSize=16" width="100%"/>
 
+[![Laravel](https://img.shields.io/badge/Laravel-1a1a2e?style=for-the-badge&logo=laravel&logoColor=FF2D20)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-1a1a2e?style=for-the-badge&logo=php&logoColor=c9b8ff)](https://php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-1a1a2e?style=for-the-badge&logo=mysql&logoColor=4479A1)](https://mysql.com)
+![Bootstrap](https://img.shields.io/badge/Bootstrap_5-1a1a2e?style=for-the-badge&logo=bootstrap&logoColor=7952B3)
+![Sanctum](https://img.shields.io/badge/Sanctum-1a1a2e?style=for-the-badge&logo=laravel&logoColor=FF2D20)
 
----
-
-##  Description
-
-**Book Store** est une application web de gestion de bibliothèque développée avec **Laravel** et **Bootstrap 5**.
-Elle permet de gérer les livres, les auteurs, les emprunts et les utilisateurs de manière simple et efficace.
-
----
-
-##  Modules
-
--  **Livres**
--  **Auteurs**
--  **Emprunts**
--  **Authentification**
-
----
-##  Fonctionnalités
-
--  **Livres** — CRUD + image couverture + disponibilité
--  **Auteurs** — CRUD + biographie + nationalité
--  **Emprunts** — CRUD + statuts + export PDF & Excel
--  **Auth** — Inscription + Connexion + Laravel Sanctum
----
-
-##  Technologies
-
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+</div>
 
 ---
 
-##  Base de données
+## About
 
-| Table | Description |
-|-------|-------------|
-| `users` | Utilisateurs de la bibliothèque |
-| `auteurs` | Auteurs des livres |
-| `livres` | Catalogue des livres |
-| `emprunts` | Gestion des emprunts |
-| `migrations` | Migrations Laravel |
-| `password_reset_tokens` | Réinitialisation mot de passe |
-| `personal_access_tokens` | Tokens API |
-| `failed_jobs` | Jobs échoués |
+**Book Store** is a web application for library management built with **Laravel** and **Bootstrap 5**.
+
+It offers two sides — a **user interface** for browsing books, searching titles, and managing borrowings, and an **admin dashboard** for managing books, authors, categories, and tracking borrowing records.
 
 ---
 
-##  Installation
+## Features
 
-### Prérequis
-- PHP >= 8.1
-- Composer
-- MySQL
-- XAMPP
+-  **Books** — CRUD · cover image · availability status
+-  **Authors** — CRUD · biography · nationality
+-  **Borrowings** — CRUD · status tracking · export PDF & Excel
+-  **Authentication** — Sign up · Login · powered by **Laravel Breeze** with token-based auth
 
-### Étapes
+---
+
+## Tech Stack
+
+<div align="center">
+
+![Laravel](https://img.shields.io/badge/Laravel-1a1a2e?style=for-the-badge&logo=laravel&logoColor=FF2D20)
+![PHP](https://img.shields.io/badge/PHP-1a1a2e?style=for-the-badge&logo=php&logoColor=c9b8ff)
+![MySQL](https://img.shields.io/badge/MySQL-1a1a2e?style=for-the-badge&logo=mysql&logoColor=4479A1)
+![Bootstrap](https://img.shields.io/badge/Bootstrap_5-1a1a2e?style=for-the-badge&logo=bootstrap&logoColor=7952B3)
+![JavaScript](https://img.shields.io/badge/JavaScript-1a1a2e?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Git](https://img.shields.io/badge/Git-1a1a2e?style=for-the-badge&logo=git&logoColor=F05032)
+
+</div>
+
+---
+
+## Installation
 
 ```bash
-# 1. Cloner le projet
+# 1. Clone the repository
 git clone https://github.com/sahlinour/Book-Store.git
 
-# 2. Aller dans le dossier
+# 2. Navigate to the project
 cd Book-Store
 
-# 3. Installer les dépendances
+# 3. Install dependencies
 composer install
 
-# 4. Copier le fichier .env
+# 4. Copy environment file
 cp .env.example .env
 
-# 5. Générer la clé
+# 5. Generate app key
 php artisan key:generate
 
-# 6. Lancer les migrations
+# 6. Configure your database in .env
+DB_DATABASE=book_store
+DB_USERNAME=root
+DB_PASSWORD=
+
+# 7. Run migrations
 php artisan migrate
 
-# 7. Créer le lien storage
+# 8. Link storage
 php artisan storage:link
 
-# 8. Lancer le serveur
+# 9. Start the server
 php artisan serve
 ```
 
 ---
 
-##  Configuration `.env`
+## Database Structure
 
-```env
-APP_NAME="Book Store"
-APP_URL=http://localhost
+| Table | Description |
+|-------|-------------|
+| `users` | Library users |
+| `auteurs` | Book authors |
+| `livres` | Book catalogue |
+| `emprunts` | Borrowing records |
+| `personal_access_tokens` | Sanctum API tokens |
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=book_store
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
----
-
-##  Contributing
-
-```bash
-# 1. Fork le projet
-# 2. Créer une branche
-git checkout -b feature/NouvelleFonctionnalite
-
-# 3. Commit
-git commit -m "Add: Nouvelle fonctionnalité"
-
-# 4. Push
-git push origin feature/NouvelleFonctionnalite
-
-# 5. Ouvrir une Pull Request
-```
 ---
 
 <div align="center">
 
-⭐ **Si ce projet vous a aidé, n'hésitez pas à lui donner une étoile !** ⭐
+developed by [Nour El Houda Sahli](https://github.com/sahlinour)
 
-**Made with ❤️ by Nour El Houda Sahli**
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%"/>
 
 </div>
